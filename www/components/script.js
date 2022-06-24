@@ -7,6 +7,11 @@ const options = {
     catch: 'default'
 }
 
-
+async function getInfo(coinA, coinB){
+	const res = await fetch(`https://economia.awesomeapi.com.br/json/last/${coinA}-${coinB}`, options);
+	const json = await res.json();
+	const info = await json[`${coinA}${coinB}`];
+	return info;
+}
 
         
