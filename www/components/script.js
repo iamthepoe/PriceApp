@@ -14,4 +14,14 @@ async function getInfo(coinA, coinB){
 	return info;
 }
 
-        
+function writeInfo(info){
+	document.write(`
+		<h1>${info.name}</h1>
+		<h2>Dados da cotação</h2>
+		<p>Alta: ${info.high}</p>
+		<p>Baixa: ${info.low}</p>
+		<p>Variação: ${info.varBid}</p>
+		<p>Venda: ${info.bid}</p>
+		<p>Compra: ${info.ask}</p>
+	`)
+}
