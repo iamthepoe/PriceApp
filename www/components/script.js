@@ -15,13 +15,35 @@ async function getInfo(coinA, coinB){
 }
 
 function writeInfo(info){
-	document.write(`
-		<h1>${info.name}</h1>
-		<h2>Dados da cotação</h2>
-		<p>Alta: ${info.high}</p>
-		<p>Baixa: ${info.low}</p>
-		<p>Variação: ${info.varBid}</p>
-		<p>Venda: ${info.bid}</p>
-		<p>Compra: ${info.ask}</p>
-	`)
+    document.querySelector('#contentBox').innerHTML = `
+    		<div class="row">
+                <h2>Nome ${info.name}</h2>
+    		</div>
+            <br>
+            <div class="row">
+                <h3>Dados da cotação:</h3>
+            </div>
+            <br>
+            <hr>
+            <div class="row">
+                <h4>Alta: <span style='color: var(--maingreen);'>${info.high}</span></h4>
+            </div>
+            <hr>
+            <div class="row">
+                <h4>Baixa: ${info.low}</h4>
+            </div>
+            <hr>
+            <div class="row">
+                <h4>Variação: ${info.varBid}</h4>
+            </div>
+            <hr>
+            <div class="row">
+                <h4>Venda: <span style='color: var(--maingreen);'>${info.bid}</span></h4>
+            </div>
+            <hr>
+            <div class="row" style="border-bottom:none;">
+                <h4>Compra: ${info.ask}</h4>
+        	</div>
+    `
 }
+

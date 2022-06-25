@@ -5,21 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
   <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
   <script src="components/loader.js"></script>
-  <script src="components/script.js"></script>
   <link rel="stylesheet" href="components/loader.css">
   <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
-    <select id="selectOne">
-        <option value="BRL">Real</option>
-        <option value="EUR">Euro</option>
-        <option value="USD">Dólar</option>
-    </select>
-    <select id="selectTwo">
-        <option value="BRL">Real</option>
-        <option value="EUR">Euro</option>
-        <option value="USD">Dólar</option>
-    </select>
+    <header class="header">
+        <h1>PriceApp</h1>
+    </header>
+    <section class="selection-box">
+        <select id="selectOne" class="selection-box-item">
+            <option value="BRL">Real</option>
+            <option value="EUR">Euro</option>
+            <option value="USD">Dólar Americano</option>
+        </select>
+        <select id="selectTwo" class="selection-box-item">
+            <option value="BRL">Real</option>
+            <option value="EUR">Euro</option>
+            <option value="USD" selected>Dólar Americano</option>
+        </select>
+    </section>
+    <section class="information-box">
+        <div class="box" id="contentBox">
+            <div class="row">
+                <h2>Nome</h2>
+            </div>
+            <br>
+            <div class="row">
+                <h3>Dados da cotação:</h3>
+            </div>
+            <br>
+            <hr>
+            <div class="row">
+                <h4>Alta:</h4>
+            </div>
+            <hr>
+            <div class="row">
+                <h4>Baixa:</h4>
+            </div>
+            <hr>
+            <div class="row">
+                <h4>Variação:</h4>
+            </div>
+            <hr>
+            <div class="row">
+                <h4>Venda:</h4>
+            </div>
+            <hr>
+            <div class="row" style="border-bottom:none;">
+                <h4>Compra:</h4>
+            </div>
+        </div>
+    </section>
+      <script src="components/script.js"></script>
 </body>
 </html>
