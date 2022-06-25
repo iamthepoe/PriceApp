@@ -1,6 +1,4 @@
-const selectOne = document.querySelector('#selectOne');
-const selectTwo = document.querySelector('#selectTwo');
-
+const select = document.querySelectorAll('.selection-box-item');
 const options = {
     method: 'GET',
     mode: 'cors',
@@ -17,7 +15,7 @@ async function getInfo(coinA, coinB){
 function writeInfo(info){
     document.querySelector('#contentBox').innerHTML = `
     		<div class="row">
-                <h2>Nome ${info.name}</h2>
+                <h3>${info.name}</h3>
     		</div>
             <br>
             <div class="row">
@@ -30,7 +28,7 @@ function writeInfo(info){
             </div>
             <hr>
             <div class="row">
-                <h4>Baixa: ${info.low}</h4>
+                <h4>Baixa:  <span style='color: red;'>${info.low}</span></h4>
             </div>
             <hr>
             <div class="row">
@@ -38,7 +36,7 @@ function writeInfo(info){
             </div>
             <hr>
             <div class="row">
-                <h4>Venda: <span style='color: var(--maingreen);'>${info.bid}</span></h4>
+                <h4>Venda: ${info.bid}</h4>
             </div>
             <hr>
             <div class="row" style="border-bottom:none;">
@@ -47,3 +45,12 @@ function writeInfo(info){
     `
 }
 
+
+select.forEach(item=>{
+    item.addEventListener('change', ()=>{
+        getInfo(select[0].value, select[1].value)
+        .then(info=>{
+            writeInfo(info);
+        })
+    });
+});
