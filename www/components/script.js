@@ -45,12 +45,17 @@ function writeInfo(info){
     `
 }
 
-
-select.forEach(item=>{
-    item.addEventListener('change', ()=>{
-        getInfo(select[0].value, select[1].value)
-        .then(info=>{
-            writeInfo(info);
-        })
+getInfo('BRL', 'USD')
+    .then(info=>{
+        writeInfo(info);
     });
-});
+
+select[0].addEventListener('change', ()=>{
+    getInfo(select[0].value, select[1].value)
+        .then(info=>writeInfo(info));
+})
+
+select[1].addEventListener('change', ()=>{
+    getInfo(select[0].value, select[1].value)
+        .then(info=>writeInfo(info));
+})
