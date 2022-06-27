@@ -45,14 +45,16 @@ function writeInfo(info){
     `
 }
 
-getInfo('BRL', 'USD')
-    .then(info=>{
-        writeInfo(info);
-    });
+//iniciando o app com a cotação BRL-USD
+    getInfo('BRL', 'USD')
+        .then(info=>{
+            writeInfo(info);
+        });
+
 
 select.forEach(item=>{
     item.addEventListener('change', ()=>{
         getInfo(select[0].value, select[1].value)
         .then(info=> writeInfo(info));
     });
-});
+});  
